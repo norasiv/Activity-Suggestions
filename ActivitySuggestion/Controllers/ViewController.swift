@@ -11,8 +11,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    
     var activities: Activities!
     var activityManager = ActivityManager()
     
