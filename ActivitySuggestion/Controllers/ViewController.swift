@@ -28,7 +28,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func newActivityPressed(_ sender: UIButton) {
-        
+        fetchActivity(URL: Cons.apiUrl) { result in
+            self.activities = result
+        }
     }
     
     
@@ -67,7 +69,13 @@ extension ViewController: UITableViewDataSource {
         let activities = activities
         let cell = tableView.dequeueReusableCell(withIdentifier: Cons.activityCell, for: indexPath)
         as! ActivityCell
-        cell.activityLabel.text = activities?.activity
+        cell.activityLabel.text = "Activity: \(activities?.activity ?? "")"
+        cell.typeLabel.text = "Type: \(activities?.type ?? "")"
+        cell.participantsLabel.text = "Participants: \(activities?.participants ?? 0)"
+        cell.priceLabel.text = "Price: \(activities?.price ?? 0.0),-"
+        cell.linkLabel.text = "Link: \(activities?.link ?? "")"
+        cell.keyLabel.text = "Key: \(activities?.key ?? "")"
+        cell.accessLabel.text = "Accessibility: \(activities?.accessibility ?? 0.0)"
         return cell
         }
         

@@ -10,6 +10,14 @@ import UIKit
 class ActivityCell: UITableViewCell {
 
     @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var participantsLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var linkLabel: UILabel!
+    @IBOutlet weak var keyLabel: UILabel!
+    @IBOutlet weak var accessLabel: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
