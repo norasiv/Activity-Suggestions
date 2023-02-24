@@ -9,57 +9,54 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     var activities: Activities!
+    var activityManager = ActivityManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchActivity(URL: Cons.apiUrl) { result in
-            self.activities = result
-        }
-        
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: Cons.activityCell, bundle: nil), forCellReuseIdentifier: Cons.activityCell)
-        
+            tableView.dataSource = self
+            tableView.register(UINib(nibName: Cons.activityCell, bundle: nil), forCellReuseIdentifier: Cons.activityCell)
+            loadActivities()
     }
     
     
     @IBAction func newActivityPressed(_ sender: UIButton) {
-        fetchActivity(URL: Cons.apiUrl) { result in
-            self.activities = result
-        }
+        loadActivities()
     }
     
+    func errorAlert(errorTitle: String = "oops, there was an error", errorText: String, style: UIAlertController.Style = .alert) {
+        let ErrorAlert = UIAlertController(title: errorTitle, message: errorText, preferredStyle: style)
+        ErrorAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(ErrorAlert, animated: true, completion: nil)
+    }
     
-    
-    // get activity from API
-    func fetchActivity(URL url:String, completion: @escaping (Activities) -> Void) {
-        
-        let url = URL(string: url)
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url!) {data, response, error in
-            if data != nil && error == nil {
-                do {
-                    let parsingData = try JSONDecoder().decode(Activities.self, from: data!)
-                    completion(parsingData)
-                    print(self.activities.activity)
-                    DispatchQueue.main.async {
+    //MARK: - load activities
+    func loadActivities() {
+        activityManager.fetchActivity(url: Cons.apiUrl) {error, result in
+            if let error = error {
+                let errorText = error.localizedDescription
+                DispatchQueue.main.async {
+                    self.errorAlert(errorText: errorText)
+                }
+                print(errorText)
+            } else {
+                self.activities = result
+                DispatchQueue.main.async {
                         self.tableView.reloadData()
-                    }
-                }catch {
-                    print (error)
                 }
             }
         }
-        dataTask.resume()
     }
+    
     
 }
 
 
+//MARK: - tableview
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -80,5 +77,26 @@ extension ViewController: UITableViewDataSource {
         }
         
     }
+
+
+//MARK: - spinner
+//extension UIViewController {
+//    func spinnerAlert(onView : UIView) -> UIAlertController {
+//        let alert = UIAlertController(title: "Loading activty", message: "Henter ny aktivitet", preferredStyle: .alert)
+//        let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        indicator.hidesWhenStopped = true
+//        indicator.startAnimating()
+//        indicator.style = .large
+//        alert.view.addSubview(indicator)
+//        present(alert, animated: true, completion: nil)
+//        return alert
+//    }
+//
+//    func stopSpinner(spinnerAlert: UIAlertController) {
+//        DispatchQueue.main.async {
+//            spinnerAlert.dismiss(animated: true, completion: nil)
+//        }
+//    }
+//}
     
 
