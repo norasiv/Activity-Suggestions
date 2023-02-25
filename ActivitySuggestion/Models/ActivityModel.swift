@@ -17,4 +17,5 @@ struct Activities : Codable {
     let link: String
     let key: String
     let accessibility: Double
+    
 }

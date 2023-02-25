@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ActivitySuggestionController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,11 +26,6 @@ class ViewController: UIViewController {
         loadActivities()
     }
     
-    func errorAlert(errorTitle: String = "oops, there was an error", errorText: String, style: UIAlertController.Style = .alert) {
-        let ErrorAlert = UIAlertController(title: errorTitle, message: errorText, preferredStyle: style)
-        ErrorAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(ErrorAlert, animated: true, completion: nil)
-    }
     
     //MARK: - load activities
     func loadActivities() {
@@ -55,13 +50,12 @@ class ViewController: UIViewController {
 
 
 //MARK: - tableview
-extension ViewController: UITableViewDataSource {
+extension ActivitySuggestionController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let activities = activities
         let cell = tableView.dequeueReusableCell(withIdentifier: Cons.activityCell, for: indexPath)
         as! ActivityCell
         cell.activityLabel.text = "Activity: \(activities?.activity ?? "")"
