@@ -15,12 +15,8 @@ class CompletedActivitiesManager: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var activities: Activities!
-    
     var savedData = [String?: [CompletedActivities]]()
     var model = [CompletedActivities]()
-    var numberOfCompletedActivities = 0
-    
     
     func saveActivities(activity: String, date: String){
         let newActivity = CompletedActivities(context: context)
@@ -36,7 +32,7 @@ class CompletedActivitiesManager: UIViewController {
     }
     
     
-    func fetchSavedActivities() {
+    func fetchSavedActivities() -> [String?: [CompletedActivities]] {
         do {
             model = try context.fetch(CompletedActivities.fetchRequest())
             savedData = Dictionary(grouping: model, by: {$0.date})
@@ -44,6 +40,7 @@ class CompletedActivitiesManager: UIViewController {
         catch {
             errorAlert(errorTitle: "There was an error", errorText: "There was a problem fetching your activities", style: .alert)
         }
+        return savedData
     }
     
 }

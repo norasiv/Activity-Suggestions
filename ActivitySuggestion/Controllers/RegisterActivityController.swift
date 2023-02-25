@@ -42,7 +42,7 @@ class RegisterActivityController: UIViewController {
             
             completedActivitiesManager.saveActivities(activity: currentActivity.activity, date: dateFormat)
         }
-        let returnToRoot = self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     @IBAction func savePressed(_ sender: UIButton) {
