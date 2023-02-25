@@ -21,6 +21,11 @@ class ActivitySuggestionController: UIViewController {
             loadActivities()
     }
     
+    @IBAction func registerPressed(_ sender: UIButton) {
+        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: Cons.registerVC) as! RegisterActivityController
+        registerVC.activity = activities
+        self.navigationController?.pushViewController(registerVC, animated: true)
+    }
     
     @IBAction func newActivityPressed(_ sender: UIButton) {
         loadActivities()

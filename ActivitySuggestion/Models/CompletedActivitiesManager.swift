@@ -28,6 +28,7 @@ class CompletedActivitiesManager: UIViewController {
         newActivity.date = date
         do {
             try context.save()
+            print("saved to root")
         }
         catch {
             errorAlert(errorTitle: "There was an error", errorText: "There was a problem saving your activity", style: .alert)
