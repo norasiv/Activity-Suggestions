@@ -5,12 +5,13 @@ class CompletedActivitiesController: UIViewController {
     
     var completedActivitiesManager = CompletedActivitiesManager()
     var activity = [String?: [CompletedActivities]]()
-    var spaceBetweenCells = 100
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Completed Activities"
         
         tableView.dataSource = self
         tableView.delegate = self

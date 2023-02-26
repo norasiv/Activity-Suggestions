@@ -11,6 +11,9 @@ class RegisterActivityController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Register Activity"
+        self.tabBarController?.tabBar.isHidden = true
+        
     }
     
     func dateFormat(date:Date) -> String{
@@ -18,8 +21,10 @@ class RegisterActivityController: UIViewController {
         formatter.dateFormat = "dd MMM YYYY"
         return formatter.string(from: date)
     }
+
     
     func registerActivity() {
+        
         if let currentActivity = activity {
             
             let dateFormat = dateFormat(date:datePicker.date)

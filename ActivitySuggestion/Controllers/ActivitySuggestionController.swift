@@ -11,6 +11,9 @@ class ActivitySuggestionController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            title = "Activity Suggestion"
+        
             tableView.dataSource = self
             tableView.register(UINib(nibName: Cons.activityCell, bundle: nil), forCellReuseIdentifier: Cons.activityCell)
             loadActivities()
