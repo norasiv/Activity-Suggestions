@@ -56,6 +56,12 @@
                                     <action selector="registerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="658-sm-4R2"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of participants" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rb7-5a-4tV">
+                                <rect key="frame" x="113" y="556" width="165" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -63,12 +69,13 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Lao-0U-1cr"/>
                     <navigationItem key="navigationItem" id="bwy-Rr-daJ"/>
                     <connections>
+                        <outlet property="participantsInput" destination="Rb7-5a-4tV" id="IeQ-M6-vLW"/>
                         <outlet property="tableView" destination="SB1-xV-stQ" id="onZ-kR-EYv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-246" y="-360"/>
+            <point key="canvasLocation" x="-246.15384615384613" y="-360.42654028436016"/>
         </scene>
         <!--Register Activity Controller-->
         <scene sceneID="18p-nu-9A0">

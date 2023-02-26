@@ -5,13 +5,14 @@ import UIKit
 class ActivitySuggestionController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var participantsInput: UITextField!
     
     var activities: Activities!
     var activityManager = ActivityManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
             title = "Activity Suggestion"
         
             tableView.dataSource = self
@@ -26,7 +27,7 @@ class ActivitySuggestionController: UIViewController {
     }
     
     @IBAction func newActivityPressed(_ sender: UIButton) {
-        loadActivities()
+        checkInputNumber()
     }
     
     
@@ -50,6 +51,33 @@ class ActivitySuggestionController: UIViewController {
     
     func loadActivitesByParticipants() {
         
+        activityManager.fetchActivity(url: Cons.participantsApiUrl) {error, result in
+            if let error = error {
+                let errorText = error.localizedDescription
+                DispatchQueue.main.async {
+                    self.errorAlert(errorText: errorText)
+                }
+                print(errorText)
+            } else {
+                self.activities = result
+                DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    //MARK: - Checking inputnumber
+    func checkInputNumber () {
+        if Int(participantsInput.text!) ?? 0 < 100 {
+            loadActivitesByParticipants()
+        }
+        if Int(participantsInput.text!) ?? 0 >= 100 {
+            errorAlert(errorText: "You can not have 100 or more participants")
+        }
+        if participantsInput.text == "" {
+            loadActivities()
+        }
     }
     
     

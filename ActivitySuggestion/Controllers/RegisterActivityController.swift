@@ -12,7 +12,7 @@ class RegisterActivityController: UIViewController {
         super.viewDidLoad()
         
         title = "Register Activity"
-        self.tabBarController?.tabBar.isHidden = true
+        //self.tabBarController?.tabBar.isHidden = true
         
     }
     
