@@ -12,6 +12,7 @@ class CompletedActivitiesController: UIViewController {
         super.viewDidLoad()
         
         title = "Completed Activities"
+
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -58,4 +59,20 @@ extension CompletedActivitiesController: UITableViewDataSource, UITableViewDeleg
         return cell
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let detailView = storyboard?.instantiateViewController(withIdentifier: Cons.detailController) as? ActivityDetailController {
+            
+            let activityDetail = Array(activity)[indexPath.section].value[indexPath.row]
+            
+            detailView.activity = "You completed this activity: \(activityDetail.activity ?? "")"
+            detailView.date = "It was completed on: \(activityDetail.date ?? "")"
+            self.navigationController?.pushViewController(detailView, animated: true)
+        }
+    }
+    
 }
+
