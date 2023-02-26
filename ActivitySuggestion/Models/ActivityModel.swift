@@ -14,3 +14,5 @@ struct Activities : Codable {
     let accessibility: Double
     
 }
+
+

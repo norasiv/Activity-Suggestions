@@ -31,6 +31,7 @@ class ActivitySuggestionController: UIViewController {
     }
     
     
+    
     //MARK: - load activities
     func loadActivities() {
         activityManager.fetchActivity(url: Cons.apiUrl) {error, result in
@@ -49,9 +50,12 @@ class ActivitySuggestionController: UIViewController {
         }
     }
     
+    
     func loadActivitesByParticipants() {
+        var inputNumbers = Int(participantsInput.text!)
+        let urlString = "\(Cons.apiUrl)?participants=\(inputNumbers ?? 0)"
         
-        activityManager.fetchActivity(url: Cons.participantsApiUrl) {error, result in
+        activityManager.fetchActivity(url: urlString) {error, result in
             if let error = error {
                 let errorText = error.localizedDescription
                 DispatchQueue.main.async {
@@ -61,11 +65,12 @@ class ActivitySuggestionController: UIViewController {
             } else {
                 self.activities = result
                 DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
         }
     }
+    
     
     //MARK: - Checking inputnumber
     func checkInputNumber () {
@@ -79,9 +84,9 @@ class ActivitySuggestionController: UIViewController {
             loadActivities()
         }
     }
+        
+    }
     
-    
-}
 
 
 //MARK: - tableview
