@@ -5,6 +5,7 @@ class CompletedActivitiesController: UIViewController {
     
     var completedActivitiesManager = CompletedActivitiesManager()
     var activity = [String?: [CompletedActivities]]()
+    var spaceBetweenCells = 100
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,6 +34,10 @@ class CompletedActivitiesController: UIViewController {
 
 //MARK: - tableview
 extension CompletedActivitiesController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return activity.count
