@@ -1,9 +1,4 @@
-//
-//  ViewController.swift
-//  ActivitySuggestion
-//
-//  Created by Nora Sivertsen Bull on 24/02/2023.
-//
+
 
 import UIKit
 
@@ -48,6 +43,10 @@ class ActivitySuggestionController: UIViewController {
                 }
             }
         }
+    }
+    
+    func loadActivitesByParticipants() {
+        
     }
     
     

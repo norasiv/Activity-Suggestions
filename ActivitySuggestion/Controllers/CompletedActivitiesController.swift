@@ -1,9 +1,3 @@
-//
-//  CompletedActivitiesControllerViewController.swift
-//  ActivitySuggestion
-//
-//  Created by Nora Sivertsen Bull on 25/02/2023.
-//
 
 import UIKit
 
@@ -21,9 +15,9 @@ class CompletedActivitiesController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: Cons.completedActivityCell, bundle: nil), forCellReuseIdentifier: Cons.completedActivityCell)
 
-
     }
     
+    //will update tableview with added data every time user goes to view
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async { [self] in
             activity = completedActivitiesManager.fetchSavedActivities()
@@ -37,7 +31,7 @@ class CompletedActivitiesController: UIViewController {
     
 }
 
-
+//MARK: - tableview
 extension CompletedActivitiesController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,13 +41,11 @@ extension CompletedActivitiesController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Array(activity)[section].value.count
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Cons.completedActivityCell) as! CompletedActivityCell
         let activitySaved = Array(activity)[indexPath.section].value[indexPath.row].activity
         let dateCompleted = Array(activity)[indexPath.section].value[indexPath.row].date
-        
         cell.activityLabel.text = activitySaved
         cell.dateLabel.text = dateCompleted
         cell.selectionStyle = .none

@@ -1,9 +1,4 @@
-//
-//  CompletedActivitiesManager.swift
-//  ActivitySuggestion
-//
-//  Created by Nora Sivertsen Bull on 25/02/2023.
-//
+
 
 import Foundation
 import CoreData
@@ -19,9 +14,9 @@ class CompletedActivitiesManager: UIViewController {
     var model = [CompletedActivities]()
     
     func saveActivities(activity: String, date: String){
-        let newActivity = CompletedActivities(context: context)
-        newActivity.activity = activity
-        newActivity.date = date
+        let completedActivity = CompletedActivities(context: context)
+        completedActivity.activity = activity
+        completedActivity.date = date
         do {
             try context.save()
             print("saved to root")
