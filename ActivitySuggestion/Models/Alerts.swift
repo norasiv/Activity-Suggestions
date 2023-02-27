@@ -14,12 +14,24 @@ extension UIViewController {
 }
 
 
+//MARK: - Spinner and text
+var spinnerView = UIView()
 var spinner : UIView?
+var spinnerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
+let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+
 extension UIViewController {
     
     func spinnerAlert(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
-        let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        spinnerView.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        spinnerView.backgroundColor = UIColor.white
+        
+        spinnerLabel.font = UIFont(name: "Arial", size: 12)
+        spinnerLabel.sizeToFit()
+        spinnerLabel.center = CGPoint(x: spinnerView.center.x, y: spinnerView.center.y - 30)
+        spinnerLabel.textColor = UIColor.black
+        spinnerLabel.text = "Fetching new activity"
         
         indicator.hidesWhenStopped = true
         indicator.startAnimating()
@@ -27,6 +39,7 @@ extension UIViewController {
         indicator.center = spinnerView.center
 
         DispatchQueue.main.async {
+            spinnerView.addSubview(spinnerLabel)
             spinnerView.addSubview(indicator)
             onView.addSubview(spinnerView)
         }

@@ -92,8 +92,7 @@ class ActivitySuggestionController: UIViewController {
             loadActivities()
         }
     }
-        
-    }
+}
     
 
 
@@ -117,41 +116,3 @@ extension ActivitySuggestionController: UITableViewDataSource {
         }
         
     }
-
-
-
-
-
-////MARK: - Spinner
-//var spinner : UIView?
-//
-//extension ActivityDetailController {
-//
-//    func spinnerAlert(onView : UIView) {
-//        let spinnerView = UIView.init(frame: onView.bounds)
-//        let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-//
-//        indicator.hidesWhenStopped = true
-//        indicator.startAnimating()
-//        indicator.style = .large
-//        indicator.center = spinnerView.center
-//
-//        DispatchQueue.main.async {
-//            spinnerView.addSubview(indicator)
-//            onView.addSubview(spinnerView)
-//        }
-//        spinner = spinnerView
-//    }
-//
-//    func stopSpinner() {
-//        DispatchQueue.main.async {
-//            spinner?.removeFromSuperview()
-//            spinner = nil
-//        }
-//    }
-//
-//}
-
-
-    
-
