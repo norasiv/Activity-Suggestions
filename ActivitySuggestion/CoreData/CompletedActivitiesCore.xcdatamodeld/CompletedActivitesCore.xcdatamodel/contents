@@ -3,5 +3,6 @@
     <entity name="CompletedActivities" representedClassName=".CompletedActivities" syncable="YES">
         <attribute name="activity" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
 </model>

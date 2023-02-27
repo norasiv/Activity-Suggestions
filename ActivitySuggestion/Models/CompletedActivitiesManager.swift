@@ -13,10 +13,11 @@ class CompletedActivitiesManager: UIViewController {
     var savedData = [String?: [CompletedActivities]]()
     var model = [CompletedActivities]()
     
-    func saveActivities(activity: String, date: String){
+    func saveActivities(activity: String, date: String, price: Double){
         let completedActivity = CompletedActivities(context: context)
         completedActivity.activity = activity
         completedActivity.date = date
+        completedActivity.price = price
         do {
             try context.save()
             print("saved to root")

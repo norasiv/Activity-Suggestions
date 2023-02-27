@@ -12,7 +12,6 @@ class RegisterActivityController: UIViewController {
         super.viewDidLoad()
         
         title = "Register Activity"
-        //self.tabBarController?.tabBar.isHidden = true
         
     }
     
@@ -29,7 +28,8 @@ class RegisterActivityController: UIViewController {
             
             let dateFormat = dateFormat(date:datePicker.date)
             let pickedActivity = String(currentActivity.activity)
-            completedActivitiesManager.saveActivities(activity: currentActivity.activity, date: dateFormat)
+            let activityPrice = Double(currentActivity.price)
+            completedActivitiesManager.saveActivities(activity: currentActivity.activity, date: dateFormat, price: activityPrice)
         }
         self.navigationController?.popToRootViewController(animated: true)
     }

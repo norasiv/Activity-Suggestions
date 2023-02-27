@@ -70,6 +70,7 @@ extension CompletedActivitiesController: UITableViewDataSource, UITableViewDeleg
             
             detailView.activity = "You completed this activity: \(activityDetail.activity ?? "")"
             detailView.date = "It was completed on: \(activityDetail.date ?? "")"
+            detailView.price = activityDetail.price
             self.navigationController?.pushViewController(detailView, animated: true)
         }
     }
