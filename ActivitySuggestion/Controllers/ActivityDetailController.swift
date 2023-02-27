@@ -47,7 +47,7 @@ class ActivityDetailController: UIViewController {
         for _ in 1...numberOfEmoji {
             let emojiLabel = UILabel()
             let randomDelay = CGFloat.random(in: 0..<10) / 5
-            let randomXPosition = Int(arc4random_uniform(350) + 1)
+            let randomXPosition = Int.random(in: 0..<350) + 1
             emojiLabel.frame = CGRect(x: randomXPosition, y: -100, width: 200, height: 100)
             emojiLabel.text = emojis
             
@@ -57,7 +57,7 @@ class ActivityDetailController: UIViewController {
         }
     }
     
-    // animation
+    // animation, see reference 2 in ReadMe
     func rainAnimation(label: UILabel, randomXPosition: Int, delay: CGFloat){
         UILabel.animate(withDuration: 5, delay: delay, options: [.curveLinear, .repeat], animations: {
             label.frame = CGRect(x: randomXPosition, y: -100, width: 200, height: 2000)

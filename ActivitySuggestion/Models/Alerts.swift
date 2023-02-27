@@ -22,6 +22,8 @@ let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, hei
 
 extension UIViewController {
     
+    
+    // see reference 3 and 4 in ReadMe
     func spinnerAlert(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)
         spinnerView.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height)

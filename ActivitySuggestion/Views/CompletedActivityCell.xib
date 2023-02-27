@@ -9,24 +9,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CompletedActivityCell" rowHeight="100" id="KGk-i7-Jjw" customClass="CompletedActivityCell" customModule="ActivitySuggestion" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="316" height="90"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CompletedActivityCell" rowHeight="103" id="KGk-i7-Jjw" customClass="CompletedActivityCell" customModule="ActivitySuggestion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="316" height="93"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="CompletedActivityCell" customModule="ActivitySuggestion" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="316" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="316" height="93"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8HG-cC-1zZ">
-                        <rect key="frame" x="10" y="10" width="296" height="70.000000000000014"/>
+                        <rect key="frame" x="10" y="10" width="296" height="73"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDw-Tg-FN7">
-                                <rect key="frame" x="0.0" y="0.0" width="296" height="41.666666666666664"/>
+                                <rect key="frame" x="0.0" y="0.0" width="296" height="44.666666666666664"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sK-np-OmD">
-                                <rect key="frame" x="0.0" y="49.666666666666664" width="296" height="20.333333333333336"/>
+                                <rect key="frame" x="0.0" y="52.666666666666664" width="296" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                     <constraint firstItem="8HG-cC-1zZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6k2-Cn-U2y"/>
                     <constraint firstItem="8HG-cC-1zZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="UOg-uF-1Rb"/>
                     <constraint firstAttribute="bottom" secondItem="8HG-cC-1zZ" secondAttribute="bottom" constant="10" id="acz-HI-fvt"/>
-                    <constraint firstAttribute="trailing" secondItem="8HG-cC-1zZ" secondAttribute="trailing" constant="10" id="eSA-fr-boa"/>
+                    <constraint firstAttribute="trailing" secondItem="8HG-cC-1zZ" secondAttribute="trailing" constant="10" id="nqm-mw-CLg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="cGr-nE-2K1"/>
@@ -46,7 +46,7 @@
                 <outlet property="activityLabel" destination="UDw-Tg-FN7" id="X6g-df-rje"/>
                 <outlet property="dateLabel" destination="5sK-np-OmD" id="tLy-IH-D1o"/>
             </connections>
-            <point key="canvasLocation" x="64.615384615384613" y="-9.24170616113744"/>
+            <point key="canvasLocation" x="64.615384615384613" y="-8.1753554502369656"/>
         </tableViewCell>
     </objects>
 </document>

@@ -13,7 +13,7 @@ class CompletedActivitiesManager: UIViewController {
     var savedData = [String?: [CompletedActivities]]()
     var model = [CompletedActivities]()
     
-    
+    //see reference 1 in ReadMe
     func saveActivities(activity: String, date: String, price: Double){
         let completedActivity = CompletedActivities(context: context)
         completedActivity.activity = activity
