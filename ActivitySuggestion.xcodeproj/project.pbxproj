@@ -25,7 +25,7 @@
 		61CD7DBC29A95AFC00A6D48E /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD7DBB29A95AFC00A6D48E /* ActivityManager.swift */; };
 		61CD7DC629AA254000A6D48E /* CompletedActivitiesCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61CD7DC429AA254000A6D48E /* CompletedActivitiesCore.xcdatamodeld */; };
 		61CD7DCC29AA277400A6D48E /* CompletedActivitiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD7DCB29AA277400A6D48E /* CompletedActivitiesManager.swift */; };
-		61CD7DCE29AA2CE000A6D48E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD7DCD29AA2CE000A6D48E /* Alert.swift */; };
+		61CD7DCE29AA2CE000A6D48E /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD7DCD29AA2CE000A6D48E /* Alerts.swift */; };
 		61CD7DE029AA6A3700A6D48E /* RegisterActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD7DDF29AA6A3700A6D48E /* RegisterActivityController.swift */; };
 		61CD7DE229AA909400A6D48E /* CompletedActivitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CD7DE129AA909400A6D48E /* CompletedActivitiesController.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +51,7 @@
 		61CD7DBB29A95AFC00A6D48E /* ActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
 		61CD7DC529AA254000A6D48E /* CompletedActivitesCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompletedActivitesCore.xcdatamodel; sourceTree = "<group>"; };
 		61CD7DCB29AA277400A6D48E /* CompletedActivitiesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedActivitiesManager.swift; sourceTree = "<group>"; };
-		61CD7DCD29AA2CE000A6D48E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		61CD7DCD29AA2CE000A6D48E /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		61CD7DDF29AA6A3700A6D48E /* RegisterActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterActivityController.swift; sourceTree = "<group>"; };
 		61CD7DE129AA909400A6D48E /* CompletedActivitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedActivitiesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +118,7 @@
 				61CD7DB029A8C11200A6D48E /* ActivityModel.swift */,
 				61CD7DBB29A95AFC00A6D48E /* ActivityManager.swift */,
 				61CD7DCB29AA277400A6D48E /* CompletedActivitiesManager.swift */,
-				61CD7DCD29AA2CE000A6D48E /* Alert.swift */,
+				61CD7DCD29AA2CE000A6D48E /* Alerts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 				61CD7DBC29A95AFC00A6D48E /* ActivityManager.swift in Sources */,
 				61530FBE29ACC28600A2284F /* CompletedActivities+CoreDataClass.swift in Sources */,
 				61CD7DE029AA6A3700A6D48E /* RegisterActivityController.swift in Sources */,
-				61CD7DCE29AA2CE000A6D48E /* Alert.swift in Sources */,
+				61CD7DCE29AA2CE000A6D48E /* Alerts.swift in Sources */,
 				61CD7D9D29A8B85E00A6D48E /* AppDelegate.swift in Sources */,
 				61CD7DB629A8F47700A6D48E /* ActivityCell.swift in Sources */,
 				61C59AD929AAB5B9003D8EDC /* CompletedActivityCell.swift in Sources */,

@@ -22,10 +22,4 @@ class ActivityManager {
         }
     }
     
-    
-//    func fetchActivityByParticipants(participants: Int) {
-//        let urlString = "\(Cons.apiUrl)?participants=\(participants)"
-//        fetchActivity(url: urlString)
-//    }
-    
 }

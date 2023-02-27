@@ -23,6 +23,7 @@ class CompletedActivitiesController: UIViewController {
     //will update tableview with added data every time user goes to view
     override func viewWillAppear(_ animated: Bool) {
         DispatchQueue.main.async { [self] in
+            
             activity = completedActivitiesManager.fetchSavedActivities()
             tableView.reloadData()
             print(activity)

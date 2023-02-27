@@ -17,6 +17,7 @@ class ActivitySuggestionController: UIViewController {
         
             tableView.dataSource = self
             tableView.register(UINib(nibName: Cons.activityCell, bundle: nil), forCellReuseIdentifier: Cons.activityCell)
+            spinnerAlert(onView: self.view)
             loadActivities()
     }
     
@@ -27,6 +28,7 @@ class ActivitySuggestionController: UIViewController {
     }
     
     @IBAction func newActivityPressed(_ sender: UIButton) {
+        spinnerAlert(onView: self.view)
         checkInputNumber()
     }
     
@@ -35,13 +37,16 @@ class ActivitySuggestionController: UIViewController {
     //MARK: - load activities
     func loadActivities() {
         activityManager.fetchActivity(url: Cons.apiUrl) {error, result in
+            
             if let error = error {
+                self.stopSpinner()
                 let errorText = error.localizedDescription
                 DispatchQueue.main.async {
                     self.errorAlert(errorText: errorText)
                 }
                 print(errorText)
             } else {
+                self.stopSpinner()
                 self.activities = result
                 DispatchQueue.main.async {
                         self.tableView.reloadData()
@@ -57,12 +62,14 @@ class ActivitySuggestionController: UIViewController {
         
         activityManager.fetchActivity(url: urlString) {error, result in
             if let error = error {
+                self.stopSpinner()
                 let errorText = error.localizedDescription
                 DispatchQueue.main.async {
                     self.errorAlert(errorText: errorText)
                 }
                 print(errorText)
             } else {
+                self.stopSpinner()
                 self.activities = result
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -78,6 +85,7 @@ class ActivitySuggestionController: UIViewController {
             loadActivitesByParticipants()
         }
         if Int(participantsInput.text!) ?? 0 >= 100 {
+            self.stopSpinner()
             errorAlert(errorText: "You can not have 100 or more participants")
         }
         if participantsInput.text == "" {
@@ -111,24 +119,39 @@ extension ActivitySuggestionController: UITableViewDataSource {
     }
 
 
-//MARK: - spinner
-//extension UIViewController {
-//    func spinnerAlert(onView : UIView) -> UIAlertController {
-//        let alert = UIAlertController(title: "Loading activty", message: "Henter ny aktivitet", preferredStyle: .alert)
+
+
+
+////MARK: - Spinner
+//var spinner : UIView?
+//
+//extension ActivityDetailController {
+//
+//    func spinnerAlert(onView : UIView) {
+//        let spinnerView = UIView.init(frame: onView.bounds)
 //        let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//
 //        indicator.hidesWhenStopped = true
 //        indicator.startAnimating()
 //        indicator.style = .large
-//        alert.view.addSubview(indicator)
-//        present(alert, animated: true, completion: nil)
-//        return alert
+//        indicator.center = spinnerView.center
+//
+//        DispatchQueue.main.async {
+//            spinnerView.addSubview(indicator)
+//            onView.addSubview(spinnerView)
+//        }
+//        spinner = spinnerView
 //    }
 //
-//    func stopSpinner(spinnerAlert: UIAlertController) {
+//    func stopSpinner() {
 //        DispatchQueue.main.async {
-//            spinnerAlert.dismiss(animated: true, completion: nil)
+//            spinner?.removeFromSuperview()
+//            spinner = nil
 //        }
 //    }
+//
 //}
+
+
     
 

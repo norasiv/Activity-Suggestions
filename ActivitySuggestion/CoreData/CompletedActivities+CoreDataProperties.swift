@@ -13,9 +13,12 @@ import CoreData
 extension CompletedActivities {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CompletedActivities> {
-        return NSFetchRequest<CompletedActivities>(entityName: "CompletedActivities")
+        return NSFetchRequest<CompletedActivities>(entityName: Cons.entityName)
     }
-
+    
+    
+    
+    
     @NSManaged public var activity: String?
     @NSManaged public var date: String?
     @NSManaged public var price: Double

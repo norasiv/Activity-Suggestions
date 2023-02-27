@@ -8,5 +8,6 @@ struct Cons {
     static let registerVC = "RegisterActivityController"
     static let completedActivityCell = "CompletedActivityCell"
     static let detailController = "ActivityDetailController"
+    static let entityName = "CompletedActivities"
     
 }
