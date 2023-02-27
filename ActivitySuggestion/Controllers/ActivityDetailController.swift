@@ -57,7 +57,7 @@ class ActivityDetailController: UIViewController {
         }
     }
     
-    // animation -- see reference 2
+    // animation
     func rainAnimation(label: UILabel, randomXPosition: Int, delay: CGFloat){
         UILabel.animate(withDuration: 5, delay: delay, options: [.curveLinear, .repeat], animations: {
             label.frame = CGRect(x: randomXPosition, y: -100, width: 200, height: 2000)
